@@ -12,8 +12,6 @@ function App() {
       setErrorMessage("");
       try {
         const response = await fetchArtikelFromApi();
-        console.log("test: ", response);
-        console.log("test");
         setArtikel(response);
       } catch (err) {
         if (err instanceof Error) {
