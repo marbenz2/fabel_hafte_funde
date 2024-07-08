@@ -1,36 +1,46 @@
-type ArtikelApiResponse = {
+type Document = {
   id: string;
-  artikelBild: {
-    id: string;
-    alt: string;
-    filename: string;
-    mimeType: string;
-    filesize: number;
-    width: number;
-    height: number;
-    focalX: number;
-    focalY: number;
-    createdAt: string;
-    updatedAt: string;
-    url: string;
-    thumbnailURL: null | string;
-  };
-  "artikelName (max 25 Zeichen)": string;
-  "artikelBeschreibung (max 100 Zeichen)": string;
-  artikelPreis: number;
+  itemName: string;
+  description: string;
+  price: number;
+  filename: string;
+  mimeType: string;
+  filesize: number;
+  width: number;
+  height: number;
+  focalX: number;
+  focalY: number;
   createdAt: string;
   updatedAt: string;
 };
 
+type Pagination = {
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: null | number;
+  nextPage: null | number;
+};
+
+type ApiResponse = {
+  docs: Document[];
+} & Pagination;
+
 export async function onRequest(): Promise<Response> {
-  console.log("Request received");
   try {
-    const result = (await fetch(`http://localhost:3000/api/item`, {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-      },
-    }).then((response) => response.json())) as ArtikelApiResponse;
+    const result = (await fetch(
+      `https://fabelhafte-funde-backend.vercel.app/api/posts`,
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+        },
+      }
+    ).then((response) => response.json())) as ApiResponse;
 
     if ("message" in result) {
       throw new Error(result.message as string);

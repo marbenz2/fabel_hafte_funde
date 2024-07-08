@@ -7,5 +7,6 @@ export async function fetchArtikelFromApi() {
     throw new Error(`API request failed with status ${response.status}`);
   }
   const data = await response.json();
+  console.log("Data: ", data);
   return data;
 }
