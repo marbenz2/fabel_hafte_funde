@@ -4,7 +4,7 @@ import { fetchArtikelFromApi } from "./lib/utils";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [artikel, setArtikel] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   useEffect(() => {
     (async () => {
@@ -12,7 +12,7 @@ function App() {
       setErrorMessage("");
       try {
         const response = await fetchArtikelFromApi();
-        setArtikel(response);
+        setPosts(response);
       } catch (err) {
         if (err instanceof Error) {
           setErrorMessage(err.message);
@@ -30,11 +30,7 @@ function App() {
       <h1 className="text-3xl font-bold underline">Hello world!</h1>
       {isLoading && <p>Loading...</p>}
       {errorMessage && <p>Error: {errorMessage}</p>}
-      <ul>
-        {artikel.map((item: any) => (
-          <li key={item.id}>{item.title}</li>
-        ))}
-      </ul>
+      <p>{posts}</p>
     </div>
   );
 }
