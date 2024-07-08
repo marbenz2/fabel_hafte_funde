@@ -1,8 +1,9 @@
 import { API_URL } from "../config";
 
 export async function fetchArtikelFromApi() {
-  const response = await fetch(`${API_URL}/items`);
-  console.log(`${API_URL}/items`);
+  console.log("fetchArtikelFromApi");
+  const response = await fetch(`${API_URL}/posts`);
+  console.log("Response: ", response);
   if (!response.ok) {
     throw new Error(`API request failed with status ${response.status}`);
   }
