@@ -41,7 +41,7 @@ export async function onRequest(): Promise<Response> {
         },
       }
     ).then((response) => response.json())) as ApiResponse;
-
+    console.log("Result: ", result);
     if ("message" in result) {
       throw new Error(result.message as string);
     }
@@ -54,7 +54,7 @@ export async function onRequest(): Promise<Response> {
   } catch (err) {
     if (err instanceof Error) {
       return new Response(JSON.stringify({ errorMessage: err.message }), {
-        status: 500,
+        status: 533,
         headers: {
           "content-type": "application/json; charset=UTF-8",
         },
