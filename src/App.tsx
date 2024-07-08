@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { fetchArtikelFromApi } from "./lib/utils";
+import { ApiResponse } from "./types";
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<ApiResponse>();
 
   useEffect(() => {
     (async () => {
@@ -27,10 +28,26 @@ function App() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      {isLoading && <p>Loading...</p>}
+      <h1 className="text-3xl font-bold">Fabelhafte Funde</h1>
+      {isLoading && <p>Loading Data...</p>}
       {errorMessage && <p>Error: {errorMessage}</p>}
-      <p>{posts}</p>
+      {!isLoading && !errorMessage && posts && posts.docs.length > 0 && (
+        <ul>
+          {posts.docs.map((post) => (
+            <li key={post.id}>
+              <img src={post.filename} alt="" />
+              <h2 className="text-2xl">{post.itemName}</h2>
+              <p>{post.description}</p>
+              <p>
+                {post.price.toLocaleString("default", {
+                  style: "currency",
+                  currency: "EUR",
+                })}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

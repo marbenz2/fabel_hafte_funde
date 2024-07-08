@@ -1,34 +1,4 @@
-type Document = {
-  id: string;
-  itemName: string;
-  description: string;
-  price: number;
-  filename: string;
-  mimeType: string;
-  filesize: number;
-  width: number;
-  height: number;
-  focalX: number;
-  focalY: number;
-  createdAt: string;
-  updatedAt: string;
-};
-
-type Pagination = {
-  totalDocs: number;
-  limit: number;
-  totalPages: number;
-  page: number;
-  pagingCounter: number;
-  hasPrevPage: boolean;
-  hasNextPage: boolean;
-  prevPage: null | number;
-  nextPage: null | number;
-};
-
-type ApiResponse = {
-  docs: Document[];
-} & Pagination;
+import { ApiResponse } from "../../../src/types";
 
 export async function onRequest(): Promise<Response> {
   try {
@@ -41,7 +11,6 @@ export async function onRequest(): Promise<Response> {
         },
       }
     ).then((response) => response.json())) as ApiResponse;
-    console.log("Result: ", result);
     if ("message" in result) {
       throw new Error(result.message as string);
     }
