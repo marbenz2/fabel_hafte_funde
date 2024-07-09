@@ -3,7 +3,7 @@ import { ApiResponse } from "../../../src/types";
 export async function onRequest(): Promise<Response> {
   try {
     const result = (await fetch(
-      `https://fabelhafte-funde-backend.vercel.app/api/posts`,
+      `https://fabelhafte-funde.netlify.app//api/posts`,
       {
         method: "GET",
         headers: {
