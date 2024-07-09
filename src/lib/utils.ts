@@ -19,7 +19,6 @@ export async function fetchInstagramFromApi() {
   if (!response.ok) {
     throw new Error(`API request failed with status ${response.status}`);
   }
-  console.log("response: ", response);
   const data = await response.json();
   return data;
 }
