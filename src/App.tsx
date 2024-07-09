@@ -36,7 +36,9 @@ function App() {
           {posts.docs.map((post) => (
             <li key={post.id}>
               <img
-                src={import.meta.env.VITE_BACKEND_URL + post.image.url}
+                src={
+                  import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url
+                }
                 alt={post.image.alt}
               />
               <h2 className="text-2xl">{post.itemName}</h2>
