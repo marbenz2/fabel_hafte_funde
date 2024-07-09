@@ -1,9 +1,10 @@
 import { InstagramApiResponse } from "../../../src/types";
+import { INSTAGRAM_LIMIT, INSTAGRAM_LL_TOKEN } from "../../../src/config";
 
 export async function onRequest(): Promise<Response> {
   try {
     const result = (await fetch(
-      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${process.env.VITE_INSTAGRAM_LIMIT}&access_token=${process.env.VITE_INSTAGRAM_LL_TOKEN}`,
+      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${INSTAGRAM_LIMIT}&access_token=${INSTAGRAM_LL_TOKEN}`,
       {
         method: "GET",
         headers: {
