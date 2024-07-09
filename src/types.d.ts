@@ -1,8 +1,10 @@
-type Document = {
+type ImageSize = {
+  url: string | null;
+};
+
+type Image = {
   id: string;
-  itemName: string;
-  description: string;
-  price: number;
+  alt: string;
   filename: string;
   mimeType: string;
   filesize: number;
@@ -10,6 +12,22 @@ type Document = {
   height: number;
   focalX: number;
   focalY: number;
+  sizes: {
+    thumbnail: ImageSize;
+    card: ImageSize;
+  };
+  createdAt: string;
+  updatedAt: string;
+  url: string;
+  thumbnailURL: string | null;
+};
+
+type Document = {
+  id: string;
+  image: Image;
+  itemName: string;
+  description: string;
+  price: number;
   createdAt: string;
   updatedAt: string;
 };
