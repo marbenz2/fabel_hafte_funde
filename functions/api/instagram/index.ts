@@ -1,11 +1,23 @@
 import { InstagramApiResponse } from "../../../src/types";
 
-export async function onRequest(): Promise<Response> {
+type Env = {
+  VITE_INSTAGRAM_LIMIT?: string;
+  VITE_INSTAGRAM_LL_TOKEN?: string;
+};
+
+export async function onRequest({ env }: { env: Env }): Promise<Response> {
   try {
+    if (!env.VITE_INSTAGRAM_LL_TOKEN) {
+      throw new Error("VITE_INSTAGRAM_LL_TOKEN is not set");
+    }
+    if (!env.VITE_INSTAGRAM_LIMIT) {
+      throw new Error("VITE_INSTAGRAM_LIMIT is not set");
+    }
+
     const result = (await fetch(
-      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${
-        process.env.VITE_INSTAGRAM_LIMIT ?? 12
-      }&access_token=${process.env.VITE_INSTAGRAM_LL_TOKEN}`,
+      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${encodeURIComponent(
+        env.VITE_INSTAGRAM_LIMIT
+      )}&access_token=${encodeURIComponent(env.VITE_INSTAGRAM_LL_TOKEN)}`,
       {
         method: "GET",
         headers: {
