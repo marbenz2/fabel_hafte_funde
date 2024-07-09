@@ -1,4 +1,4 @@
-import { ApiResponse } from "../../../src/types";
+import { PayloadApiResponse } from "../../../src/types";
 
 export async function onRequest(): Promise<Response> {
   try {
@@ -10,7 +10,7 @@ export async function onRequest(): Promise<Response> {
           accept: "application/json",
         },
       }
-    ).then((response) => response.json())) as ApiResponse;
+    ).then((response) => response.json())) as PayloadApiResponse;
     if ("message" in result) {
       throw new Error(result.message as string);
     }
