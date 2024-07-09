@@ -54,6 +54,7 @@ type InstagramPost = {
   media_type: string;
   media_url: string;
   caption: string;
+  permalink: string;
 };
 
 type InstagramPagingCursors = {
