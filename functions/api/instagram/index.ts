@@ -15,7 +15,7 @@ export async function onRequest({ env }: { env: Env }): Promise<Response> {
     }
 
     const result = (await fetch(
-      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption&limit=${encodeURIComponent(
+      `https://graph.instagram.com/me/media?fields=id,media_type,media_url,caption,permalink&limit=${encodeURIComponent(
         env.VITE_INSTAGRAM_LIMIT
       )}&access_token=${encodeURIComponent(env.VITE_INSTAGRAM_LL_TOKEN)}`,
       {
