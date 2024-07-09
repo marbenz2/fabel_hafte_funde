@@ -35,7 +35,10 @@ function App() {
         <ul>
           {posts.docs.map((post) => (
             <li key={post.id}>
-              <img src={post.filename} alt="" />
+              <img
+                src={import.meta.env.VITE_BACKEND_URL + post.image.url}
+                alt={post.image.alt}
+              />
               <h2 className="text-2xl">{post.itemName}</h2>
               <p>{post.description}</p>
               <p>
