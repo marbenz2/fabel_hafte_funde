@@ -15,6 +15,7 @@ type Image = {
   sizes: {
     thumbnail: ImageSize;
     card: ImageSize;
+    inspector: ImageSize;
   };
   createdAt: string;
   updatedAt: string;
@@ -44,6 +45,27 @@ type Pagination = {
   nextPage: null | number;
 };
 
-export type ApiResponse = {
+export type PayloadApiResponse = {
   docs: Document[];
 } & Pagination;
+
+type InstagramPost = {
+  id: string;
+  media_type: string;
+  media_url: string;
+  caption: string;
+};
+
+type InstagramPagingCursors = {
+  before: string;
+  after: string;
+};
+
+type InstagramPaging = {
+  cursors: InstagramPagingCursors;
+};
+
+export type InstagramApiResponse = {
+  data: InstagramPost[];
+  paging: InstagramPaging;
+};
