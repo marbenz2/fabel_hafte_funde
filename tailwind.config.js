@@ -26,7 +26,7 @@ module.exports = {
         allura: ["Allura", "cursive", "sans-serif"],
       },
       backgroundImage: {
-        "header-pattern": "url('./src/assets/header.webp')",
+        "header-pattern": "url('/header.webp')",
       },
       colors: {
         border: "hsl(var(--border))",
