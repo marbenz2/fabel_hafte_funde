@@ -39,11 +39,13 @@ const Instagram = () => {
           {feeds.data.map((feed) => (
             <Card key={feed.id} className="">
               <CardHeader className="p-0">
-                <img
-                  src={import.meta.env.VITE_BACKEND_URL + feed.media_url}
-                  alt={feed.caption}
-                  className="w-full h-[400px] object-cover"
-                />
+                {feed.media_type === "IMAGE" && (
+                  <img
+                    src={import.meta.env.VITE_BACKEND_URL + feed.media_url}
+                    alt={feed.caption}
+                    className="w-full h-[400px] object-cover"
+                  />
+                )}
               </CardHeader>
               <CardContent>
                 <p className="text-sm md:text-md">{feed.caption}</p>
