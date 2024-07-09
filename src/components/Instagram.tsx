@@ -35,7 +35,7 @@ const Instagram = () => {
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-2">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {feeds.data.map((feed) => (
             <a
               key={feed.id}

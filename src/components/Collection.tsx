@@ -35,7 +35,7 @@ const Collection = () => {
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && posts && posts.docs.length > 0 && (
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {posts.docs.map((post) => (
             <Card key={post.id} className="">
               <CardHeader className="p-0">
