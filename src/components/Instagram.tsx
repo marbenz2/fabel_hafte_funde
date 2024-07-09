@@ -16,7 +16,6 @@ const Instagram = () => {
       setErrorMessage("");
       try {
         const response = await fetchInstagramFromApi();
-        console.log(response);
         setFeeds(response);
       } catch (err) {
         if (err instanceof Error) {
@@ -38,22 +37,28 @@ const Instagram = () => {
       {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-2">
           {feeds.data.map((feed) => (
-            <Card key={feed.id} className="border-none">
-              <CardContent className="relative p-0">
-                {feed.media_type === "IMAGE" && (
-                  <img
-                    src={feed.media_url}
-                    alt={feed.caption}
-                    className="w-full h-[400px] object-cover hover:scale-110 transition-transform duration-300 ease-in-out"
-                  />
-                )}
-                <p
-                  className={`absolute bg-white/40 p-2 w-full bottom-0 left-0 text-sm md:text-md`}
-                >
-                  {feed.caption}
-                </p>
-              </CardContent>
-            </Card>
+            <a
+              key={feed.id}
+              href={feed.permalink}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              <Card className="border-none">
+                <CardContent className="relative p-0">
+                  {feed.media_type === "IMAGE" ? (
+                    <img
+                      src={feed.media_url}
+                      alt={feed.caption}
+                      className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
+                    />
+                  ) : (
+                    <p className="flex w-full h-[400px] items-center justify-center border">
+                      {feed.media_type} Not supported yet.
+                    </p>
+                  )}
+                </CardContent>
+              </Card>
+            </a>
           ))}
         </div>
       )}
