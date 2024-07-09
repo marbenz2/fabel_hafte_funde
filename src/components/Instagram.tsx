@@ -16,7 +16,6 @@ const Instagram = () => {
       setErrorMessage("");
       try {
         const response = await fetchInstagramFromApi();
-        console.log("test: ", response);
         setFeeds(response);
       } catch (err) {
         if (err instanceof Error) {
