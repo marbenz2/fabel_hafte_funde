@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchFromApi } from "../lib/utils";
+import { fetchPayloadFromApi } from "../lib/utils";
 import { PayloadApiResponse } from "../types";
 import { Card, CardContent, CardFooter, CardHeader } from "./ui/card";
 import { Spinner } from "./Spinner";
@@ -15,7 +15,7 @@ const Collection = () => {
       setIsLoading(true);
       setErrorMessage("");
       try {
-        const response = await fetchFromApi();
+        const response = await fetchPayloadFromApi();
         setPosts(response);
       } catch (err) {
         if (err instanceof Error) {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchFromApi } from "../lib/utils";
+import { fetchInstagramFromApi } from "../lib/utils";
 import { InstagramApiResponse } from "../types";
 import { Card, CardContent, CardHeader } from "./ui/card";
 import { Spinner } from "./Spinner";
@@ -15,7 +15,8 @@ const Instagram = () => {
       setIsLoading(true);
       setErrorMessage("");
       try {
-        const response = await fetchFromApi();
+        const response = await fetchInstagramFromApi();
+        console.log("test: ", response);
         setFeeds(response);
       } catch (err) {
         if (err instanceof Error) {
