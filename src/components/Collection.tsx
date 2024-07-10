@@ -34,6 +34,11 @@ const Collection = () => {
       <h2 className="text-7xl font-allura">Neuheiten</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
+      {!isLoading && !errorMessage && posts && posts.docs.length === 0 && (
+        <div className="flex w-full justify-center">
+          <p>Keine Einträge.</p>
+        </div>
+      )}
       {!isLoading && !errorMessage && posts && posts.docs.length > 0 && (
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {posts.docs.map((post) => (
@@ -44,7 +49,7 @@ const Collection = () => {
                     import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url
                   }
                   alt={post.image.alt}
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-fit object-cover"
                 />
               </CardHeader>
               <CardContent>
