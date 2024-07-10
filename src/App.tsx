@@ -7,10 +7,10 @@ function App() {
   return (
     <>
       <div className="flex flex-col w-full">
-        <Container className="items-center py-12 bg-yellow-950/10">
+        <Container className="items-center py-24 px-4 bg-yellow-950/10">
           <Collection />
         </Container>
-        <Container className="items-center py-12">
+        <Container className="items-center py-24 px-4">
           <Instagram />
         </Container>
       </div>

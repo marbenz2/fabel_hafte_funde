@@ -15,7 +15,7 @@ const today = new Intl.DateTimeFormat("de-DE", options)
 
 const Openings = () => {
   return (
-    <div className="absolute bg-white/60 lg:bg-transparent w-full py-4 pl-12 sm:pl-48 top-2/3 left-1/4 transform -translate-y-2/3 -translate-x-1/4">
+    <div className="absolute bg-white/60 md:bg-transparent w-full p-4 bottom-1/4 transform translate-y-2/4 md:bottom-0 md:translate-y-0 left-0">
       <Table className="w-fit">
         <TableHeader>
           <TableRow>
