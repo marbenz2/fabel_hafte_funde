@@ -1,12 +1,5 @@
 import { ChevronsDown } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./ui/table";
+import Openings from "./Openings";
 
 const Header = () => {
   return (
@@ -18,65 +11,7 @@ const Header = () => {
           </h1>
           <p className="text-xl sm:text-2xl lg:text-4xl">by Sandra Adamos</p>
         </div>
-        <div className="absolute bg-white/60 lg:bg-transparent w-full py-4 pl-12 sm:pl-48 top-2/3 left-1/4 transform -translate-y-2/3 -translate-x-1/4">
-          <Table className="w-fit">
-            <TableHeader>
-              <TableRow>
-                <TableHead colSpan={8}>Öffnungszeiten:</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              <TableRow>
-                <TableCell className="text-left">MO</TableCell>
-                <TableCell>9:30</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>13</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="text-left">DI</TableCell>
-                <TableCell>9:30</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>13</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="text-left">MI</TableCell>
-                <TableCell>9:30</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>13</TableCell>
-                <TableCell className="w-fit p-0">&</TableCell>
-                <TableCell>15</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>18</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="text-left">DO</TableCell>
-                <TableCell>9:30</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>13</TableCell>
-                <TableCell className="w-fit p-0">&</TableCell>
-                <TableCell>15</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>18</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="text-left">FR</TableCell>
-                <TableCell>9:30</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>13</TableCell>
-                <TableCell className="w-fit p-0">&</TableCell>
-                <TableCell>15</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>18</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="text-left">SA</TableCell>
-                <TableCell className="text-end">10</TableCell>
-                <TableCell className="w-fit p-0">-</TableCell>
-                <TableCell>14</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-        </div>
+        <Openings />
         <ChevronsDown
           className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce"
           size="2.5rem"
