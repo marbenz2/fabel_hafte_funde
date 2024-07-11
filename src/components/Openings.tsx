@@ -24,19 +24,19 @@ const Openings = () => {
         </TableRow>
       </TableHeader>
       <TableBody>
-        <TableRow className={`${today === "MO" && "bg-black/30"}`}>
+        <TableRow className={`${today === "MO" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">MO</TableCell>
           <TableCell>9:30</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
           <TableCell>13</TableCell>
         </TableRow>
-        <TableRow className={`${today === "DI" && "bg-black/10"}`}>
+        <TableRow className={`${today === "DI" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">DI</TableCell>
           <TableCell>9:30</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
           <TableCell>13</TableCell>
         </TableRow>
-        <TableRow className={`${today === "MI" && "bg-black/10"}`}>
+        <TableRow className={`${today === "MI" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">MI</TableCell>
           <TableCell>9:30</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
@@ -46,7 +46,7 @@ const Openings = () => {
           <TableCell className="w-fit p-0">-</TableCell>
           <TableCell>18</TableCell>
         </TableRow>
-        <TableRow className={`${today === "DO" && "bg-black/10"}`}>
+        <TableRow className={`${today === "DO" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">DO</TableCell>
           <TableCell>9:30</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
@@ -56,7 +56,7 @@ const Openings = () => {
           <TableCell className="w-fit p-0">-</TableCell>
           <TableCell>18</TableCell>
         </TableRow>
-        <TableRow className={`${today === "FR" && "bg-black/10"}`}>
+        <TableRow className={`${today === "FR" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">FR</TableCell>
           <TableCell>9:30</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
@@ -66,7 +66,7 @@ const Openings = () => {
           <TableCell className="w-fit p-0">-</TableCell>
           <TableCell>18</TableCell>
         </TableRow>
-        <TableRow className={`${today === "SA" && "bg-black/10"}`}>
+        <TableRow className={`${today === "SA" && "bg-yellow-950/10"}`}>
           <TableCell className="text-left">SA</TableCell>
           <TableCell className="text-end">10</TableCell>
           <TableCell className="w-fit p-0">-</TableCell>
