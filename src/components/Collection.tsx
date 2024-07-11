@@ -69,7 +69,9 @@ const Collection = () => {
                     <h2 className="text-md md:text-xl font-semibold">
                       {post.itemName}
                     </h2>
-                    <p className="text-sm md:text-md">{post.description}</p>
+                    <p className="text-sm md:text-md text-primary/80">
+                      {post.description}
+                    </p>
                   </CardContent>
                   <CardFooter className="h-full items-end justify-end">
                     <p className="font-semibold">
