@@ -10,7 +10,7 @@ const BackgroundHouse = () => {
         className="absolute right-0 top-0"
       >
         <g
-          fill="hsla(0, 0%, 0%, 0.75)"
+          fill="hsla(0, 0%, 0%, 0.25)"
           id="svg_1"
           transform="matrix(0.1 0 0 -0.1 0 0)"
         >

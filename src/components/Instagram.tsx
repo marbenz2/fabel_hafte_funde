@@ -35,7 +35,7 @@ const Instagram = () => {
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
           {feeds.data.map((feed) => (
             <a
               key={feed.id}
@@ -43,7 +43,7 @@ const Instagram = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <Card className="border-none">
+              <Card className="border-none rounded-none">
                 <CardContent className="relative p-0">
                   {feed.media_type === "IMAGE" ? (
                     <img
