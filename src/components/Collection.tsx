@@ -38,7 +38,7 @@ const Collection = () => {
 
   return (
     <Container className="max-w-7xl px-0">
-      <h2 className="text-7xl font-allura mb-24">Neuheiten</h2>
+      <h2 className="text-7xl font-allura mb-12">Neuheiten</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && posts && posts.docs.length === 0 && (
@@ -52,7 +52,7 @@ const Collection = () => {
             {posts.docs.map((post) => (
               <CarouselItem
                 key={post.id}
-                className="basis xs:basis-1/2 md:basis-1/3 lg:basis-1/4"
+                className="basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
                 <Card className="">
                   <CardHeader className="p-0">
@@ -65,7 +65,7 @@ const Collection = () => {
                       className="w-full h-fit object-cover"
                     />
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-2">
                     <h2 className="text-md md:text-xl font-semibold">
                       {post.itemName}
                     </h2>
@@ -73,7 +73,7 @@ const Collection = () => {
                       {post.description}
                     </p>
                   </CardContent>
-                  <CardFooter className="h-full items-end justify-end">
+                  <CardFooter className="h-full items-end justify-end p-2">
                     <p className="font-semibold">
                       {post.price.toLocaleString("default", {
                         style: "currency",

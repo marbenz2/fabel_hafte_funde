@@ -10,6 +10,10 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontSize: {
+      ...defaultTheme.fontSize,
+      "10xl": "10rem",
+    },
     screens: {
       xs: "475px",
       ...defaultTheme.screens,
@@ -32,7 +36,13 @@ module.exports = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
+        button: "hsl(var(--button))",
+
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          accent: "hsl(var(--background-accent))",
+          muted: "hsl(var(--background-accent-muted))",
+        },
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",

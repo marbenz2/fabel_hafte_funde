@@ -1,11 +1,5 @@
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "./ui/table";
+import { Card } from "./ui/card";
+import { Table, TableBody, TableCell, TableRow } from "./ui/table";
 
 const options: Intl.DateTimeFormatOptions = { weekday: "long" };
 const today = new Intl.DateTimeFormat("de-DE", options)
@@ -15,65 +9,72 @@ const today = new Intl.DateTimeFormat("de-DE", options)
 
 const Openings = () => {
   return (
-    <Table className="w-fit">
-      <TableHeader>
-        <TableRow>
-          <TableHead colSpan={8} className="text-lg">
-            Öffnungszeiten:
-          </TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        <TableRow className={`${today === "MO" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">MO</TableCell>
-          <TableCell>9:30</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>13</TableCell>
-        </TableRow>
-        <TableRow className={`${today === "DI" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">DI</TableCell>
-          <TableCell>9:30</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>13</TableCell>
-        </TableRow>
-        <TableRow className={`${today === "MI" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">MI</TableCell>
-          <TableCell>9:30</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>13</TableCell>
-          <TableCell className="w-fit p-0">&</TableCell>
-          <TableCell>15</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>18</TableCell>
-        </TableRow>
-        <TableRow className={`${today === "DO" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">DO</TableCell>
-          <TableCell>9:30</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>13</TableCell>
-          <TableCell className="w-fit p-0">&</TableCell>
-          <TableCell>15</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>18</TableCell>
-        </TableRow>
-        <TableRow className={`${today === "FR" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">FR</TableCell>
-          <TableCell>9:30</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>13</TableCell>
-          <TableCell className="w-fit p-0">&</TableCell>
-          <TableCell>15</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>18</TableCell>
-        </TableRow>
-        <TableRow className={`${today === "SA" && "bg-yellow-950/10"}`}>
-          <TableCell className="text-left">SA</TableCell>
-          <TableCell className="text-end">10</TableCell>
-          <TableCell className="w-fit p-0">-</TableCell>
-          <TableCell>14</TableCell>
-        </TableRow>
-      </TableBody>
-    </Table>
+    <Card className="p-2">
+      <Table className="w-fit">
+        <TableBody>
+          <TableRow className={`${today === "MO" && "bg-background-accent"}`}>
+            <TableCell className="text-left">MO</TableCell>
+            <TableCell>9:30</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>13</TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+          </TableRow>
+          <TableRow className={`${today === "DI" && "bg-background-accent"}`}>
+            <TableCell className="text-left">DI</TableCell>
+            <TableCell>9:30</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>13</TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+          </TableRow>
+          <TableRow className={`${today === "MI" && "bg-background-accent"}`}>
+            <TableCell className="text-left">MI</TableCell>
+            <TableCell>9:30</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>13</TableCell>
+            <TableCell className="w-fit p-0">&</TableCell>
+            <TableCell>15</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>18</TableCell>
+          </TableRow>
+          <TableRow className={`${today === "DO" && "bg-background-accent"}`}>
+            <TableCell className="text-left">DO</TableCell>
+            <TableCell>9:30</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>13</TableCell>
+            <TableCell className="w-fit p-0">&</TableCell>
+            <TableCell>15</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>18</TableCell>
+          </TableRow>
+          <TableRow className={`${today === "FR" && "bg-background-accent"}`}>
+            <TableCell className="text-left">FR</TableCell>
+            <TableCell>9:30</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>13</TableCell>
+            <TableCell className="w-fit p-0">&</TableCell>
+            <TableCell>15</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>18</TableCell>
+          </TableRow>
+          <TableRow className={`${today === "SA" && "bg-background-accent"}`}>
+            <TableCell className="text-left">SA</TableCell>
+            <TableCell className="text-end">10</TableCell>
+            <TableCell className="w-fit p-0">-</TableCell>
+            <TableCell>14</TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+            <TableCell className="w-fit p-0"></TableCell>
+          </TableRow>
+        </TableBody>
+      </Table>
+    </Card>
   );
 };
 

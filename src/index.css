@@ -6,8 +6,11 @@
 
 @layer base {
   :root {
+    --background-accent: 26.67 13.64% 74.12%;
+    --background-accent-muted: 26.67 13.64% 84.12%;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
+    --button: 0 0% 0%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 0 0% 100%;
@@ -17,13 +20,13 @@
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 0 0% 44.9%;
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 0 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3, 0%, 45%;
+    --input: 214.3 0% 45%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
@@ -39,7 +42,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-serif;
+    @apply bg-background text-foreground cursor-default;
   }
 }
 

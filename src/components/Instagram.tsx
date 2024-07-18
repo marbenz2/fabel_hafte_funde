@@ -31,11 +31,11 @@ const Instagram = () => {
 
   return (
     <Container className="max-w-7xl px-0">
-      <h2 className="text-7xl font-allura mb-24">Instagram</h2>
+      <h2 className="text-7xl font-allura mb-12">Instagram</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
-        <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
           {feeds.data.map((feed) => (
             <a
               key={feed.id}
@@ -49,7 +49,7 @@ const Instagram = () => {
                     <img
                       src={feed.media_url}
                       alt={feed.caption}
-                      className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
+                      className="w-full aspect-square object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                   ) : (
                     <p className="flex w-full h-[400px] items-center justify-center border">

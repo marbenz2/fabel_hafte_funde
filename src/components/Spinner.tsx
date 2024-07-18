@@ -9,7 +9,7 @@ const Spinner = React.forwardRef<
   <span
     ref={ref}
     className={cn(
-      "flex w-8 h-8 border-t animate-spin border-pink-400 rounded-full",
+      "flex w-8 h-8 border-t animate-spin border-background-accent rounded-full",
       className
     )}
     {...props}
