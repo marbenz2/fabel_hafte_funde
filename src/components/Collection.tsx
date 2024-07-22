@@ -37,8 +37,8 @@ const Collection = () => {
   }, []);
 
   return (
-    <Container className="max-w-7xl px-0">
-      <h2 className="text-7xl font-allura mb-12">Neuheiten</h2>
+    <Container id="collection" className="max-w-7xl px-0">
+      <h2 className="text-7xl font-allura mb-12">Kollektionen</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
       {!isLoading && !errorMessage && posts && posts.docs.length === 0 && (

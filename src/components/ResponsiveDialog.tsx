@@ -38,7 +38,7 @@ export function ResponsiveDialog({ type }: { type: "openings" | "contact" }) {
             {type === "openings" ? "Öffnungszeiten" : "Kontakt"}
           </Button>
         </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px] bg-background-muted">
+        <DialogContent className="sm:max-w-lg bg-background-muted">
           <DialogDescription></DialogDescription>
           <DialogHeader>
             <DialogTitle>
@@ -50,7 +50,7 @@ export function ResponsiveDialog({ type }: { type: "openings" | "contact" }) {
                 : "Unsere Kontaktdaten: Wir freuen uns auf Ihre Anfrage!"}
             </DialogDescription>
           </DialogHeader>
-          <div className="flex w-full my-12">
+          <div className="flex w-full justify-center my-8">
             {type === "openings" && <Openings />}
             {type === "contact" && <Contact />}
             {type === undefined || (null && <p>Error</p>)}
@@ -81,7 +81,7 @@ export function ResponsiveDialog({ type }: { type: "openings" | "contact" }) {
               : "Unsere Kontaktdaten: Wir freuen uns auf Ihre Anfrage!"}
           </DrawerDescription>
         </DrawerHeader>
-        <div className="flex w-full justify-center px-4 my-12">
+        <div className="flex w-full justify-center px-4 my-8">
           {type === "openings" && <Openings />}
           {type === "contact" && <Contact />}
           {type === undefined || (null && <p>Error</p>)}

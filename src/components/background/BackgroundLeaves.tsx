@@ -6,7 +6,7 @@ const BackgroundLeaves = () => {
         height="100%"
         viewBox="0 0 1000 1600"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0"
+        className="absolute top-0 left-0 -z-10"
       >
         <defs>
           <filter
