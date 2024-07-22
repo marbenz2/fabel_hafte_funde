@@ -30,7 +30,7 @@ const Instagram = () => {
   }, []);
 
   return (
-    <Container className="max-w-7xl px-0">
+    <Container id="instagram" className="max-w-7xl px-0">
       <h2 className="text-7xl font-allura mb-12">Instagram</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}

@@ -1,5 +1,7 @@
 import { MailIcon, PhoneIcon } from "lucide-react";
 
+import { address } from "../data/data.json";
+
 const Contact = () => {
   return (
     <div className="flex w-fit gap-8">
@@ -9,10 +11,10 @@ const Contact = () => {
         </div>
         <h2 className="font-semibold">Telefon</h2>
         <a
-          href="tel:+49 1234 5678901"
+          href={`tel:${address.phone}`}
           className="text-sm decoration-dashed underline"
         >
-          +49 1234 5678901
+          {address.phone}
         </a>
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
@@ -21,10 +23,10 @@ const Contact = () => {
         </div>
         <h2 className="font-semibold">E-Mail</h2>
         <a
-          href="mailto:fabelhaftefunde@test.de"
+          href={`mailto:${address.email}`}
           className="text-sm decoration-dashed underline"
         >
-          fabelhaftefunde@test.de
+          {address.email}
         </a>
       </div>
     </div>
