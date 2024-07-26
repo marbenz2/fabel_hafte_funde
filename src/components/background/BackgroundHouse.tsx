@@ -4,7 +4,7 @@ const BackgroundHouse = () => {
       <svg
         version="1.1"
         preserveAspectRatio="none"
-        height="100%"
+        height="100vh"
         viewBox="0 0 800 1220"
         xmlns="http://www.w3.org/2000/svg"
         className="absolute right-0 top-0"
