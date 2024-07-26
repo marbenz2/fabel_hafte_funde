@@ -48,7 +48,7 @@ const Collection = () => {
       )}
       {!isLoading && !errorMessage && posts && posts.docs.length > 0 && (
         <Carousel className="w-full">
-          <CarouselContent className="w-1/2">
+          <CarouselContent className="w-full overflow-clip">
             {posts.docs.map((post) => (
               <CarouselItem
                 key={post.id}
