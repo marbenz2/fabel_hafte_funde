@@ -54,7 +54,7 @@ const Collection = () => {
                 key={post.id}
                 className="basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
-                <Card className="">
+                <Card className="w-fit">
                   <CardHeader className="p-0">
                     <img
                       src={
