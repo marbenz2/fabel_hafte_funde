@@ -1,26 +1,27 @@
 import { MailIcon, PhoneIcon } from "lucide-react";
 
 import { address } from "../data/data.json";
+import { Button } from "./ui/button";
 
 const Contact = () => {
   return (
     <div className="flex w-fit gap-8">
       <div className="flex flex-col justify-center items-center gap-2">
-        <div className="p-4 bg-primary w-fit rounded-full">
+        <Button variant="rounded" size="rounded">
           <PhoneIcon stroke="white" />
-        </div>
+        </Button>
         <h2 className="font-semibold">Telefon</h2>
         <a
-          href={`tel:${address.phone}`}
+          href={`tel:${address.phone.mobile}`}
           className="text-sm decoration-dashed underline"
         >
-          {address.phone}
+          {address.phone.mobile}
         </a>
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
-        <div className="p-4 bg-primary w-fit rounded-full">
+        <Button variant="rounded" size="rounded">
           <MailIcon stroke="white" />
-        </div>
+        </Button>
         <h2 className="font-semibold">E-Mail</h2>
         <a
           href={`mailto:${address.email}`}
