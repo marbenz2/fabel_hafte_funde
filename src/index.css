@@ -45,7 +45,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground cursor-default;
+    @apply cursor-default text-foreground bg-background-accent flex justify-center;
   }
 }
 
