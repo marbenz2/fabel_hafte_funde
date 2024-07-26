@@ -1,14 +1,16 @@
 {
   "address": {
-    "company": {
-      "title": "Fabelhafte Funde",
-      "owner": "Sandra Adamos"
-    },
     "street": { "name": "Dieselstrasse", "number": "13" },
     "zip": "72074",
     "city": "Tübingen",
-    "phone": "+49 178 36 656 42",
+    "phone": { "mobile": "+49 178 36 656 42" },
     "email": "fabelhaftefunde@web.de"
+  },
+  "company": {
+    "title": "Fabelhafte Funde",
+    "owner": "Sandra Adamos",
+    "sloganTitle": "Kleider und Spielzeug mit Geschichte",
+    "sloganText": "Nachhaltig shoppen, regional entdecken!"
   },
   "sustainability": {
     "text": "Nachhaltigkeit liegt uns am Herzen! Durch den Kauf von Secondhand-Kleidung und Spielzeug trägst du aktiv zur Reduzierung von Abfall und zur Schonung unserer Ressourcen bei. Gemeinsam können wir einen positiven Beitrag für die Umwelt leisten und gleichzeitig großartige Produkte eine zweite Chance geben. Danke, dass du uns auf diesem Weg begleitest."
@@ -19,16 +21,37 @@
   "maps": {
     "link": "https://maps.app.goo.gl/TKnx7ir8SUvtc3Md9"
   },
-  "pages": [
-    { "name": "Home", "link": "/", "icon": "home" },
+  "links": [
+    { "name": "Home", "link": "#home", "icon": "home" },
     { "name": "Kollektionen", "link": "#collection", "icon": "shirt" },
     { "name": "Instagram", "link": "#instagram", "icon": "feed" },
-    { "name": "Kontakt", "link": "#footer", "icon": "mail" },
-    { "name": "Impressum", "link": "#imprint" },
-    { "name": "Datenschutz", "link": "#privacy" }
+    { "name": "Kontakt", "link": "#footer", "icon": "mail" }
   ],
+  "essentials": [{ "name": "Impressum" }, { "name": "Datenschutz" }],
   "creator": {
     "name": "MarBenz Webdesign",
     "link": "https://marbenz.de"
+  },
+  "pages": {
+    "openings": {
+      "title": "Öffnungszeiten",
+      "description": "Unsere Öffnungszeiten im Überblick: Für die Annahme von Kleidung und/oder Spielzeug bitte vorher anrufen und einen Termin vereinbaren.",
+      "type": "outline"
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Wir freuen uns auf Ihre Anfrage!",
+      "type": "default"
+    },
+    "imprint": {
+      "title": "Impressum",
+      "description": "",
+      "type": "none"
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "",
+      "type": "none"
+    }
   }
 }
