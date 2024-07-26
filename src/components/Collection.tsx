@@ -37,7 +37,7 @@ const Collection = () => {
   }, []);
 
   return (
-    <Container id="collection" className="max-w-7xl px-0">
+    <Container id="collection" className="max-w-7xl w-full px-0">
       <h2 className="text-7xl font-allura mb-12">Kollektionen</h2>
       {isLoading && <Spinner className="self-center" />}
       {errorMessage && <p>Error: {errorMessage}</p>}
@@ -54,7 +54,7 @@ const Collection = () => {
                 key={post.id}
                 className="basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
-                <Card>
+                <Card className="">
                   <CardHeader className="p-0">
                     <img
                       src={
@@ -62,7 +62,7 @@ const Collection = () => {
                         post.image.sizes.card.url
                       }
                       alt={post.image.alt}
-                      className="w-[100px] object-cover"
+                      className="w-full h-fit object-cover"
                     />
                   </CardHeader>
                   <CardContent className="p-2">
