@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonProps } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -22,38 +22,53 @@ import {
 } from "@/components/ui/drawer";
 import Openings from "./Openings";
 import Contact from "./Contact";
+import Imprint from "./Imprint";
+import Privacy from "./Privacy";
 
-export function ResponsiveDialog({ type }: { type: "openings" | "contact" }) {
+import { pages } from "../data/data.json";
+
+export function ResponsiveDialog({
+  type,
+}: {
+  type: "openings" | "contact" | "imprint" | "privacy";
+}) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  const config = pages[type];
 
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <Button
-            variant={type === "openings" ? "outline" : "default"}
-            className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
-          >
-            {type === "openings" ? "Öffnungszeiten" : "Kontakt"}
-          </Button>
+          {type === "openings" || type === "contact" ? (
+            <Button
+              variant={config.type as ButtonProps["variant"]}
+              className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
+            >
+              {config.title}
+            </Button>
+          ) : type === "imprint" || type === "privacy" ? (
+            <button className="decoration-dashed underline">
+              {config.title}
+            </button>
+          ) : null}
         </DialogTrigger>
-        <DialogContent className="sm:max-w-lg bg-background-muted">
-          <DialogDescription></DialogDescription>
+        <DialogContent className="max-w-2xl p-8 w-fit bg-background-muted">
           <DialogHeader>
-            <DialogTitle>
-              {type === "openings" ? "Öffnungszeiten" : "Kontaktdaten"}
-            </DialogTitle>
-            <DialogDescription>
-              {type === "openings"
-                ? "Unsere Öffnungszeiten im Überblick: Für die Annahme von Kleidung und/oder Spielzeug bitte vorher anrufen und einen Termin vereinbaren."
-                : "Unsere Kontaktdaten: Wir freuen uns auf Ihre Anfrage!"}
-            </DialogDescription>
+            <DialogTitle>{config.title}</DialogTitle>
+            <DialogDescription>{config.description}</DialogDescription>
           </DialogHeader>
-          <div className="flex w-full justify-center my-8">
-            {type === "openings" && <Openings />}
-            {type === "contact" && <Contact />}
-            {type === undefined || (null && <p>Error</p>)}
+          <div className="flex w-full justify-center mt-8">
+            {type === "openings" ? (
+              <Openings />
+            ) : type === "contact" ? (
+              <Contact />
+            ) : type === "imprint" ? (
+              <Imprint />
+            ) : type === "privacy" ? (
+              <Privacy />
+            ) : null}
           </div>
         </DialogContent>
       </Dialog>
@@ -63,28 +78,34 @@ export function ResponsiveDialog({ type }: { type: "openings" | "contact" }) {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button
-          variant={type === "openings" ? "outline" : "default"}
-          className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
-        >
-          {type === "openings" ? "Öffnungszeiten" : "Kontakt"}
-        </Button>
+        {type === "openings" || type === "contact" ? (
+          <Button
+            variant={config.type as ButtonProps["variant"]}
+            className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
+          >
+            {config.title}
+          </Button>
+        ) : type === "imprint" || type === "privacy" ? (
+          <button className="decoration-dashed underline">
+            {config.title}
+          </button>
+        ) : null}
       </DrawerTrigger>
       <DrawerContent className=" bg-background-muted">
         <DrawerHeader className="text-left">
-          <DrawerTitle>
-            {type === "openings" ? "Öffnungszeiten" : "Kontaktdaten"}
-          </DrawerTitle>
-          <DrawerDescription>
-            {type === "openings"
-              ? "Unsere Öffnungszeiten im Überblick: Für die Annahme von Kleidung und/oder Spielzeug bitte vorher anrufen und einen Termin vereinbaren."
-              : "Unsere Kontaktdaten: Wir freuen uns auf Ihre Anfrage!"}
-          </DrawerDescription>
+          <DrawerTitle>{config.title}</DrawerTitle>
+          <DrawerDescription>{config.description}</DrawerDescription>
         </DrawerHeader>
         <div className="flex w-full justify-center px-4 my-8">
-          {type === "openings" && <Openings />}
-          {type === "contact" && <Contact />}
-          {type === undefined || (null && <p>Error</p>)}
+          {type === "openings" ? (
+            <Openings />
+          ) : type === "contact" ? (
+            <Contact />
+          ) : type === "imprint" ? (
+            <Imprint />
+          ) : type === "privacy" ? (
+            <Privacy />
+          ) : null}
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
