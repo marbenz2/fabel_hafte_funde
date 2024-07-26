@@ -52,7 +52,7 @@ const Collection = () => {
             {posts.docs.map((post) => (
               <CarouselItem
                 key={post.id}
-                className="basis-1 md:basis-1/3 lg:basis-1/4"
+                className="md:basis-1/3 lg:basis-1/4"
               >
                 <Card className="">
                   <CardHeader className="p-0">
