@@ -1,6 +1,7 @@
 import { StoreIcon } from "lucide-react";
 import { Card } from "./ui/card";
 import { Table, TableBody, TableCell, TableRow } from "./ui/table";
+import { Button } from "./ui/button";
 
 const options: Intl.DateTimeFormatOptions = { weekday: "long" };
 const today = new Intl.DateTimeFormat("de-DE", options)
@@ -12,9 +13,9 @@ const Openings = () => {
   return (
     <div className="flex flex-col-reverse sm:flex-row justify-center items-center w-full gap-8">
       <div className="flex flex-col items-center gap-2">
-        <div className="p-4 bg-primary w-fit rounded-full">
+        <Button variant="rounded" size="rounded">
           <StoreIcon stroke="white" />
-        </div>
+        </Button>
         <p className="text-sm text-green-700 decoration-dashed underline">
           Jetzt geöffnet.
         </p>
