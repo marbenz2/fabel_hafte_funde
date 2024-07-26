@@ -62,7 +62,8 @@ const Collection = () => {
                         post.image.sizes.card.url
                       }
                       alt={post.image.alt}
-                      className="w-full h-fit object-cover"
+                      width={50}
+                      className="object-cover"
                     />
                   </CardHeader>
                   <CardContent className="p-2">
