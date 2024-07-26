@@ -48,13 +48,13 @@ const Collection = () => {
       )}
       {!isLoading && !errorMessage && posts && posts.docs.length > 0 && (
         <Carousel className="w-full">
-          <CarouselContent className="">
+          <CarouselContent className="w-full">
             {posts.docs.map((post) => (
               <CarouselItem
                 key={post.id}
                 className="basis-1/2 md:basis-1/3 lg:basis-1/4"
               >
-                <Card className="w-[150px]">
+                <Card className="">
                   <CardHeader className="p-0">
                     <img
                       src={
@@ -62,7 +62,7 @@ const Collection = () => {
                         post.image.sizes.card.url
                       }
                       alt={post.image.alt}
-                      className="w-1/2"
+                      className="w-full h-fit object-cover"
                     />
                   </CardHeader>
                   <CardContent className="p-2">
