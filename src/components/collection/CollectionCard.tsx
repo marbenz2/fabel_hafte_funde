@@ -1,41 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
 import { PayloadDocument } from "@/types";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "../ui/scroll-area";
+import { Skeleton } from "../ui/skeleton";
 
 const CollectionCard = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { post: PayloadDocument }
->(({ className, post, ...props }, ref) => (
-  <Card
-    className={cn("border-none rounded-none h-full", className)}
-    ref={ref}
-    {...props}
-  >
-    <CardHeader className="p-0">
-      <img
-        src={import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url}
-        alt={post.image.alt}
-        className="w-full h-fit object-cover"
-      />
-    </CardHeader>
-    <CardContent className="p-2 text-start">
-      <h2 className="font-semibold">{post.itemName}</h2>
-      <p className="text-sm text-primary/80">{post.shortDescription}</p>
-    </CardContent>
-    <CardFooter className="h-full items-end justify-end p-2">
-      {post.price && (
-        <p className="font-semibold">
-          {post.price.toLocaleString("default", {
-            style: "currency",
-            currency: "EUR",
-          })}
-        </p>
-      )}
-    </CardFooter>
-  </Card>
-));
+  React.HTMLAttributes<HTMLDivElement> & {
+    post: PayloadDocument;
+    isDataLoading: boolean;
+  }
+>(({ className, post, isDataLoading, ...props }, ref) => {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
+  return (
+    <Card
+      className={cn("border-none rounded-none h-full", className)}
+      ref={ref}
+      {...props}
+    >
+      <CardHeader className="p-0">
+        {isImageLoading && (
+          <Skeleton className="h-[332px] max-w-[200px] md:max-w-[400px] w-full rounded-none"></Skeleton>
+        )}
+
+        <img
+          src={import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url}
+          alt={post.image.alt}
+          className={`w-full h-fit object-cover ${
+            isImageLoading ? "hidden" : ""
+          }`}
+          onLoad={() => setIsImageLoading(false)}
+        />
+      </CardHeader>
+      <CardContent className="p-2 text-start">
+        {isDataLoading && (
+          <div className="flex flex-col gap-2">
+            <Skeleton className="h-5 w-[175px]"></Skeleton>
+            <Skeleton className="h-4 w-[150px]"></Skeleton>
+          </div>
+        )}
+        {!isDataLoading && (
+          <>
+            <h2 className="font-semibold">{post.itemName}</h2>
+            <p className="text-sm text-primary/80">{post.shortDescription}</p>
+          </>
+        )}
+      </CardContent>
+      <CardFooter className="h-full items-end justify-end p-2">
+        {isDataLoading && <Skeleton className="h-4 w-[50px]"></Skeleton>}
+        {!isDataLoading && post.price && (
+          <p className="font-semibold">
+            {post.price.toLocaleString("default", {
+              style: "currency",
+              currency: "EUR",
+            })}
+          </p>
+        )}
+      </CardFooter>
+    </Card>
+  );
+});
 CollectionCard.displayName = "CollectionCard";
 
 const CollectionCardDetails = React.forwardRef<
