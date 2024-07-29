@@ -35,7 +35,7 @@
   "pages": {
     "openings": {
       "title": "Öffnungszeiten",
-      "description": "Unsere Öffnungszeiten im Überblick: Für die Annahme von Kleidung und/oder Spielzeug bitte vorher anrufen und einen Termin vereinbaren.",
+      "description": "Für die Annahme von Kleidung und/oder Spielzeug bitte vorher anrufen und einen Termin vereinbaren.\nUnsere Öffnungszeiten im Überblick: ",
       "type": "outline"
     },
     "contact": {
