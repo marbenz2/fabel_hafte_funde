@@ -24,7 +24,7 @@ export function Navigation() {
 
   if (isDesktop) {
     return (
-      <DesktopNavButtons className="p-4 px-12 flex w-fit self-center">
+      <DesktopNavButtons className="flex w-fit self-center">
         {links.map((link) => (
           <Button key={link.name} variant="rounded" size="rounded">
             <a href={link.link}>
