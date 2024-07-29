@@ -1,8 +1,8 @@
-type ImageSize = {
+type PayloadImageSize = {
   url: string | null;
 };
 
-type Image = {
+type PayloadImage = {
   id: string;
   alt: string;
   filename: string;
@@ -13,9 +13,9 @@ type Image = {
   focalX: number;
   focalY: number;
   sizes: {
-    thumbnail: ImageSize;
-    card: ImageSize;
-    inspector: ImageSize;
+    thumbnail: PayloadImageSize;
+    card: PayloadImageSize;
+    inspector: PayloadImageSize;
   };
   createdAt: string;
   updatedAt: string;
@@ -23,17 +23,20 @@ type Image = {
   thumbnailURL: string | null;
 };
 
-type Document = {
+type PayloadDocument = {
   id: string;
-  image: Image;
+  image: PayloadImage;
   itemName: string;
-  description: string;
-  price: number;
+  shortDescription: string;
+  price?: number;
+  condition: string;
+  size?: string;
+  detailedDescription: string;
   createdAt: string;
   updatedAt: string;
 };
 
-type Pagination = {
+type PayloadPagination = {
   totalDocs: number;
   limit: number;
   totalPages: number;
@@ -46,8 +49,8 @@ type Pagination = {
 };
 
 export type PayloadApiResponse = {
-  docs: Document[];
-} & Pagination;
+  docs: PayloadDocument[];
+} & PayloadPagination;
 
 type InstagramPost = {
   id: string;
