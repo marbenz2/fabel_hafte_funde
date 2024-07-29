@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -26,41 +26,45 @@ import Imprint from "./Imprint";
 import Privacy from "./Privacy";
 
 import { pages } from "../data/data.json";
+import { PayloadDocument } from "@/types";
+import { CollectionCardDetails } from "./collection/CollectionCard";
 
 export function ResponsiveDialog({
+  children,
+  data,
   type,
 }: {
-  type: "openings" | "contact" | "imprint" | "privacy";
+  children: React.ReactNode;
+  data?: PayloadDocument;
+  type?: "openings" | "contact" | "imprint" | "privacy";
 }) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const config = pages[type];
+  let config = null;
+  if (type) {
+    config = pages[type];
+  }
 
   if (isDesktop) {
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          {type === "openings" || type === "contact" ? (
-            <Button
-              variant={config.type as ButtonProps["variant"]}
-              className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
-            >
-              {config.title}
-            </Button>
-          ) : type === "imprint" || type === "privacy" ? (
-            <button className="decoration-dashed underline">
-              {config.title}
-            </button>
-          ) : null}
-        </DialogTrigger>
-        <DialogContent className="max-w-2xl p-8 w-fit bg-background-muted">
+        <DialogTrigger asChild>{children}</DialogTrigger>
+        <DialogContent
+          className={`max-w-6xl ${
+            (type === "openings" || type === "contact") && "max-w-fit"
+          } p-8 w-full bg-background-muted`}
+        >
           <DialogHeader>
-            <DialogTitle>{config.title}</DialogTitle>
-            <DialogDescription>{config.description}</DialogDescription>
+            <DialogTitle>{data ? data.itemName : config?.title}</DialogTitle>
+            <DialogDescription className="whitespace-pre-wrap">
+              {data ? data.shortDescription : config?.description}
+            </DialogDescription>
           </DialogHeader>
           <div className="flex w-full justify-center mt-8">
-            {type === "openings" ? (
+            {data ? (
+              <CollectionCardDetails post={data} />
+            ) : type === "openings" ? (
               <Openings />
             ) : type === "contact" ? (
               <Contact />
@@ -77,27 +81,16 @@ export function ResponsiveDialog({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        {type === "openings" || type === "contact" ? (
-          <Button
-            variant={config.type as ButtonProps["variant"]}
-            className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
-          >
-            {config.title}
-          </Button>
-        ) : type === "imprint" || type === "privacy" ? (
-          <button className="decoration-dashed underline">
-            {config.title}
-          </button>
-        ) : null}
-      </DrawerTrigger>
+      <DrawerTrigger asChild>{children}</DrawerTrigger>
       <DrawerContent className=" bg-background-muted">
         <DrawerHeader className="text-left">
-          <DrawerTitle>{config.title}</DrawerTitle>
-          <DrawerDescription>{config.description}</DrawerDescription>
+          <DrawerTitle>{config?.title}</DrawerTitle>
+          <DrawerDescription>{config?.description}</DrawerDescription>
         </DrawerHeader>
         <div className="flex w-full justify-center px-4 my-8">
-          {type === "openings" ? (
+          {data ? (
+            <CollectionCardDetails post={data} />
+          ) : type === "openings" ? (
             <Openings />
           ) : type === "contact" ? (
             <Contact />
