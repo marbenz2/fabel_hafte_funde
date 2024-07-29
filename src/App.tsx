@@ -1,4 +1,4 @@
-import Collection from "./components/Collection";
+import Collection from "./components/collection/Collection";
 import Instagram from "./components/Instagram";
 import { Container } from "./components/ui/container";
 

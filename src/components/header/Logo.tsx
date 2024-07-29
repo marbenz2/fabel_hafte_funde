@@ -1,4 +1,4 @@
-import { company } from "../data/data.json";
+import { company } from "../../data/data.json";
 
 const Logo = () => {
   return (

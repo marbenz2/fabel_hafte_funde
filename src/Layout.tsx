@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import BackgroundLeaves from "./components/background/BackgroundLeaves";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/footer/Footer";
 import BackgroundHouse from "./components/background/BackgroundHouse";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {

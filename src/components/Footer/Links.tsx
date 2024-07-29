@@ -16,8 +16,14 @@ const Links = () => {
             {link.name}
           </a>
         ))}
-        <ResponsiveDialog type="imprint" />
-        <ResponsiveDialog type="privacy" />
+        <ResponsiveDialog type="imprint">
+          <button className="decoration-dashed underline">Impressum</button>
+        </ResponsiveDialog>
+        <ResponsiveDialog type="privacy">
+          <button className="decoration-dashed underline">
+            Datenschutzerklärung
+          </button>
+        </ResponsiveDialog>
       </div>
     </div>
   );
