@@ -1,8 +1,6 @@
-import Collection from "./components/collection/Collection";
 import About from "./components/info/About";
 import Commission from "./components/info/Commission";
 import Introduction from "./components/info/Introduction";
-import Instagram from "./components/Instagram";
 import { Container } from "./components/ui/container";
 
 function App() {
