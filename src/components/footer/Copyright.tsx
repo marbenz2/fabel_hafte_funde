@@ -2,7 +2,7 @@ import { creator } from "../../data/data.json";
 
 const Copyright = () => {
   return (
-    <section className="flex flex-col py-4 px-4 lg:px-12 xl:flex-row xl:justify-center xl:gap-2">
+    <section className="flex flex-col py-4 px-4 lg:px-12 xl:flex-row xl:justify-center xl:gap-2 bg-black/10">
       <p>
         Copyright &copy; {new Date().getFullYear()}{" "}
         <a

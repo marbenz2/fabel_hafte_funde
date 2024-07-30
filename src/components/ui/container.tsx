@@ -6,11 +6,7 @@ const Container = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <section
-    ref={ref}
-    className={cn("flex flex-col w-full gap-4 p-4", className)}
-    {...props}
-  />
+  <section ref={ref} className={cn("grid", className)} {...props} />
 ));
 Container.displayName = "Container";
 

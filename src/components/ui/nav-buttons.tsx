@@ -1,38 +1,30 @@
 import * as React from "react";
-
 import { cn } from "@/lib/utils";
-
-import { Button } from "./button";
-
 import { MenuIcon } from "lucide-react";
 
-const DesktopNavButtons = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ className, children, ...props }, ref) => (
-  <div
+const NavLinks = React.forwardRef<
+  HTMLAnchorElement,
+  React.AnchorHTMLAttributes<HTMLAnchorElement>
+>(({ className, children, href, ...props }, ref) => (
+  <a
     ref={ref}
-    className={cn(
-      "hidden md:flex w-full justify-between md:justify-center gap-0 md:gap-24 z-50",
-      className
-    )}
+    href={href}
+    className={cn("text-lg font-thin hover:text-orange-300", className)}
     {...props}
   >
     {children}
-  </div>
+  </a>
 ));
-DesktopNavButtons.displayName = "DesktopNavButtons";
+NavLinks.displayName = "NavLinks";
 
-const MobileNavMenuButton = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+const NavMenuButtonMobile = React.forwardRef<
+  HTMLButtonElement,
+  React.ButtonHTMLAttributes<HTMLButtonElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn(className)} {...props}>
-    <Button variant="rounded" size="rounded">
-      <MenuIcon stroke="white" size="1.5em" />
-    </Button>
-  </div>
+  <button ref={ref} className={cn(className)} {...props}>
+    <MenuIcon />
+  </button>
 ));
-MobileNavMenuButton.displayName = "MobileNavMenuButton";
+NavMenuButtonMobile.displayName = "NavMenuButtonMobile";
 
-export { DesktopNavButtons, MobileNavMenuButton };
+export { NavLinks, NavMenuButtonMobile };

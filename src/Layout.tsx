@@ -1,14 +1,12 @@
 import React from "react";
 import Header from "./components/header/Header";
-import BackgroundLeaves from "./components/background/BackgroundLeaves";
 import Footer from "./components/footer/Footer";
-import BackgroundHouse from "./components/background/BackgroundHouse";
+import { Navigation } from "./components/Navigation";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="relative flex flex-col w-full max-w-[2560px] min-h-screen h-full items-center bg-background-accent overflow-clip">
-      <BackgroundHouse />
-      <BackgroundLeaves />
+    <main className="flex flex-col w-full max-w-[2560px] min-h-screen h-full items-center bg-background-accent overflow-clip">
+      <Navigation />
       <Header />
       {children}
       <Footer />

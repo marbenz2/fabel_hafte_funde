@@ -107,7 +107,7 @@ const Openings = () => {
                 return (
                   <TableRow
                     key={day}
-                    className={`${today === name && "bg-background-accent"}`}
+                    className={`${today === name && "bg-background"}`}
                   >
                     <TableCell className="text-left">{name}</TableCell>
                     {hours.map(({ open, close }) => (
