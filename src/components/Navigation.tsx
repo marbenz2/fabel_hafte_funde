@@ -2,6 +2,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { cn } from "@/lib/utils";
 
 import { NavLinks, NavMenuButtonMobile } from "./ui/nav-buttons";
+import { Heading1 } from "./ui/text-formatter";
 import {
   Sheet,
   SheetContent,
@@ -10,7 +11,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { InstagramIcon, MailIcon } from "lucide-react";
+import { InstagramIcon, MailIcon, PhoneIcon } from "lucide-react";
 
 import { links } from "@/data/data.json";
 
@@ -28,12 +29,13 @@ const NavigationContainer = ({
     )}
   >
     <div className="col-span-2 md:col-span-1 flex items-center">
-      <h1 className="font-allura text-3xl md:text-4xl">Fabelhafte Funde</h1>
+      <Heading1>Fabelhafte Funde</Heading1>
     </div>
     {children}
-    <div className="col-span-1 flex gap-4 items-center justify-end">
+    <div className="col-span-1 flex gap-4 lg:gap-8 items-center justify-end">
       <InstagramIcon />
       <MailIcon />
+      <PhoneIcon />
     </div>
   </nav>
 );
