@@ -9,9 +9,41 @@ const CollectionCard = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement> & {
     post: PayloadDocument;
-    isDataLoading: boolean;
   }
->(({ className, post, isDataLoading, ...props }, ref) => {
+>(({ className, post, ...props }, ref) => {
+  const [isImageLoading, setIsImageLoading] = useState(true);
+
+  return (
+    <Card
+      className={cn("border-none rounded-none h-[320px] w-[250px]", className)}
+      ref={ref}
+      {...props}
+    >
+      <CardContent className="p-0">
+        {isImageLoading && (
+          <Skeleton className="h-[320px] w-[250px] rounded-none" />
+        )}
+
+        <img
+          src={import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url}
+          alt={post.image.alt}
+          className={`h-full w-full object-cover ${
+            isImageLoading ? "hidden" : ""
+          }`}
+          onLoad={() => setIsImageLoading(false)}
+        />
+      </CardContent>
+    </Card>
+  );
+});
+CollectionCard.displayName = "CollectionCard";
+
+const CollectionCardHighlight = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement> & {
+    post: PayloadDocument;
+  }
+>(({ className, post, ...props }, ref) => {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   return (
@@ -22,13 +54,13 @@ const CollectionCard = React.forwardRef<
     >
       <CardHeader className="p-0">
         {isImageLoading && (
-          <Skeleton className="h-[332px] max-w-[200px] md:max-w-[400px] w-full rounded-none"></Skeleton>
+          <Skeleton className="h-full lg:h-[calc(640px)] w-full lg:w-[480px] rounded-none"></Skeleton>
         )}
 
         <img
           src={import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url}
           alt={post.image.alt}
-          className={`w-full h-fit object-cover ${
+          className={`max-h-[640px] h-full w-full object-cover ${
             isImageLoading ? "hidden" : ""
           }`}
           onLoad={() => setIsImageLoading(false)}
@@ -37,7 +69,7 @@ const CollectionCard = React.forwardRef<
     </Card>
   );
 });
-CollectionCard.displayName = "CollectionCard";
+CollectionCardHighlight.displayName = "CollectionCardHighlight";
 
 const CollectionCardDetails = React.forwardRef<
   HTMLDivElement,
@@ -53,7 +85,7 @@ const CollectionCardDetails = React.forwardRef<
         <img
           src={import.meta.env.VITE_BACKEND_URL + post.image.sizes.card.url}
           alt={post.image.alt}
-          className="max-w-[200px] md:max-w-[400px] w-full h-fit object-cover"
+          className="max-w-[200px] md:max-w-[400px] w-full h-fit object-cover border"
         />
       </CardHeader>
       <div className="flex flex-col flex-1">
@@ -95,4 +127,4 @@ const CollectionCardDetails = React.forwardRef<
 ));
 CollectionCardDetails.displayName = "CollectionCardDetails";
 
-export { CollectionCard, CollectionCardDetails };
+export { CollectionCard, CollectionCardHighlight, CollectionCardDetails };
