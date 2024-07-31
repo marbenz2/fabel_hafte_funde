@@ -1,3 +1,5 @@
+import { ContactButton } from "../Contact";
+import { OpeningsButton } from "../Openings";
 import { Container } from "../ui/container";
 import { Heading2, Paragraph } from "../ui/text-formatter";
 
@@ -6,8 +8,8 @@ import { address, company } from "@/data/data.json";
 const Introduction = () => {
   return (
     <>
-      <Container className="text-primary/60 grid-cols-5">
-        <div className="order-1 lg:order-1 lg:col-start-2 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4">
+      <Container id="introduction" className="text-primary/60 grid-cols-5">
+        <div className="order-1 lg:col-start-2 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4">
           <Heading2 className="lg:self-center text-center">
             {company.title}
           </Heading2>
@@ -22,6 +24,10 @@ const Introduction = () => {
             Geldbeutel, sondern auch die Umwelt schonen. Wir freuen uns auf
             Ihren Besuch!
           </Paragraph>
+          <div className="flex flex-col sm:flex-row w-full justify-center items-center gap-2 sm:gap-12">
+            <OpeningsButton />
+            <ContactButton />
+          </div>
         </div>
       </Container>
     </>
