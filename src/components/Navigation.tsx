@@ -13,7 +13,7 @@ import {
 
 import { InstagramIcon, MailIcon, PhoneIcon } from "lucide-react";
 
-import { links } from "@/data/data.json";
+import { links, socialmedia, address } from "@/data/data.json";
 
 const NavigationContainer = ({
   children,
@@ -28,14 +28,20 @@ const NavigationContainer = ({
       className
     )}
   >
-    <div className="col-span-2 md:col-span-1 flex items-center">
+    <div className="col-span-1 md:col-span-1 flex items-center">
       <Heading1>Fabelhafte Funde</Heading1>
     </div>
     {children}
-    <div className="col-span-1 flex gap-4 lg:gap-8 items-center justify-end">
-      <InstagramIcon />
-      <MailIcon />
-      <PhoneIcon />
+    <div className="col-span-2 md:col-span-1 flex gap-4 lg:gap-8 items-center justify-end">
+      <a href={socialmedia.instagram} rel="noopener noreferrer" target="_blank">
+        <InstagramIcon />
+      </a>
+      <a href={`mailto:${address.email}`}>
+        <MailIcon />
+      </a>
+      <a href={`tel:${address.phone.mobile}`}>
+        <PhoneIcon />
+      </a>
     </div>
   </nav>
 );
