@@ -22,7 +22,7 @@ function App() {
         <Container className="bg-black/10">
           <Collection />
         </Container>
-        <Container className="">
+        <Container className="py-24">
           <Instagram />
         </Container>
         <Container className="bg-black/10 mb-32">
