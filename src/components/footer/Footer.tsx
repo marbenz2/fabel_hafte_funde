@@ -1,5 +1,4 @@
 import Copyright from "./Copyright";
-import Payment from "./Payment";
 import Address from "./Address";
 import Sustainability from "./Sustainability";
 import Socialmedia from "./Socialmedia";
@@ -10,9 +9,8 @@ const Footer = () => {
   return (
     <footer
       id="footer"
-      className="flex flex-col bg-background w-full border-t-4 border-black/10 text-sm z-40"
+      className="flex flex-col bg-background w-full border-t-4 border-black/20 text-sm z-40"
     >
-      <Payment />
       <section className="flex flex-col xl:flex-row gap-8 xl:gap-16 px-4 lg:px-12 py-4 bg-black/10">
         <Address />
         <Sustainability />
