@@ -34,31 +34,6 @@ const CollectionCard = React.forwardRef<
           onLoad={() => setIsImageLoading(false)}
         />
       </CardHeader>
-      <CardContent className="p-2 text-start">
-        {isDataLoading && (
-          <div className="flex flex-col gap-2">
-            <Skeleton className="h-5 w-[175px]"></Skeleton>
-            <Skeleton className="h-4 w-[150px]"></Skeleton>
-          </div>
-        )}
-        {!isDataLoading && (
-          <>
-            <h2 className="font-semibold">{post.itemName}</h2>
-            <p className="text-sm text-primary/80">{post.shortDescription}</p>
-          </>
-        )}
-      </CardContent>
-      <CardFooter className="h-full items-end justify-end p-2">
-        {isDataLoading && <Skeleton className="h-4 w-[50px]"></Skeleton>}
-        {!isDataLoading && post.price && (
-          <p className="font-semibold">
-            {post.price.toLocaleString("default", {
-              style: "currency",
-              currency: "EUR",
-            })}
-          </p>
-        )}
-      </CardFooter>
     </Card>
   );
 });
