@@ -8,9 +8,7 @@
   },
   "company": {
     "title": "Fabelhafte Funde",
-    "owner": "Sandra Adamos",
-    "sloganTitle": "Kleider und Spielzeug mit Geschichte",
-    "sloganText": "Nachhaltig shoppen, regional entdecken!"
+    "owner": "Sandra Adamos"
   },
   "sustainability": {
     "text": "Nachhaltigkeit liegt uns am Herzen! Durch den Kauf von Secondhand-Kleidung und Spielzeug trägst du aktiv zur Reduzierung von Abfall und zur Schonung unserer Ressourcen bei. Gemeinsam können wir einen positiven Beitrag für die Umwelt leisten und gleichzeitig großartige Produkte eine zweite Chance geben. Danke, dass du uns auf diesem Weg begleitest."
@@ -22,10 +20,11 @@
     "link": "https://maps.app.goo.gl/TKnx7ir8SUvtc3Md9"
   },
   "links": [
-    { "name": "Home", "link": "#home", "icon": "home" },
-    { "name": "Kollektionen", "link": "#collection", "icon": "shirt" },
-    { "name": "Instagram", "link": "#instagram", "icon": "feed" },
-    { "name": "Kontakt", "link": "#footer", "icon": "mail" }
+    { "name": "Home", "link": "#home" },
+    { "name": "About", "link": "#about" },
+    { "name": "Kollektionen", "link": "#collection" },
+    { "name": "Feed", "link": "#instagram" },
+    { "name": "Kontakt", "link": "#footer" }
   ],
   "essentials": [{ "name": "Impressum" }, { "name": "Datenschutz" }],
   "creator": {
