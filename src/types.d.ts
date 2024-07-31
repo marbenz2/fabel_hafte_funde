@@ -53,6 +53,7 @@ export type PayloadApiResponse = {
 } & PayloadPagination;
 
 type InstagramPost = {
+  username: string;
   id: string;
   media_type: string;
   media_url: string;
