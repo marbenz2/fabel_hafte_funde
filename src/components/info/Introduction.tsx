@@ -1,4 +1,5 @@
 import { Container } from "../ui/container";
+import { Heading2, Paragraph } from "../ui/text-formatter";
 
 import { address, company } from "@/data/data.json";
 
@@ -6,9 +7,11 @@ const Introduction = () => {
   return (
     <>
       <Container className="text-primary/60 grid-cols-5">
-        <div className="order-1 lg:order-1 lg:col-start-2 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-12 px-4 lg:px-24">
-          <h2 className="font-thin text-6xl">{company.title}</h2>
-          <p>
+        <div className="order-1 lg:order-1 lg:col-start-2 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4">
+          <Heading2 className="lg:self-center text-center">
+            {company.title}
+          </Heading2>
+          <Paragraph className="text-center">
             Herzlich Willkommen bei {company.title}, Ihrem charmanten
             Second-Hand-Shop für Kleidung und Kinderspielzeug in {address.city}!
             Bei uns finden Sie liebevoll ausgewählte, gut erhaltene Stücke für
@@ -18,7 +21,7 @@ const Introduction = () => {
             entdecken Sie nachhaltige Schnäppchen, die nicht nur Ihren
             Geldbeutel, sondern auch die Umwelt schonen. Wir freuen uns auf
             Ihren Besuch!
-          </p>
+          </Paragraph>
         </div>
       </Container>
     </>
