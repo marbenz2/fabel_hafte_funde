@@ -4,7 +4,7 @@ import { Heading2, Paragraph } from "../ui/text-formatter";
 const Commission = () => {
   return (
     <>
-      <Container className="text-primary/60 grid-cols-5">
+      <Container id="commission" className="text-primary/60 grid-cols-5">
         <div className="order-2 lg:order-1 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4 lg:px-8 xl:px-12 2xl:px-32">
           <Heading2>Annahme</Heading2>
           <Paragraph>
@@ -21,20 +21,12 @@ const Commission = () => {
             quia. Autem laborum reiciendis nihil distinctio eaque! Dolorum saepe
             suscipit molestiae eius dignissimos corrupti totam, ullam porro
             itaque eaque nobis iste beatae voluptas pariatur ut. Quia, eaque.
-            Vitae repellendus magnam dicta? Maiores soluta quia exercitationem
-            cupiditate quibusdam. Dolore quas dolores explicabo omnis
-            consequatur? Sunt ipsa tenetur commodi ipsum itaque eligendi,
-            officiis iusto iure quidem doloremque obcaecati debitis, porro
-            perspiciatis, quia deleniti? Explicabo nobis cumque error quidem
-            molestiae officiis nesciunt libero fugiat, pariatur temporibus
-            debitis ea modi inventore asperiores sint accusamus qui, quisquam
-            laboriosam. Perferendis aspernatur labore tenetur, quod maiores
-            provident harum.
+            Vitae repellendus magnam dicta?
           </Paragraph>
         </div>
         <img
-          className="order-1 lg:order-2 col-span-5 lg:col-span-2 max-h-[640px] h-full w-full object-cover"
-          src="https://picsum.photos/1280/1280"
+          className="order-1 col-span-5 lg:col-span-2 max-h-[640px] h-full w-full object-cover"
+          src="/warenannahme.webp"
           alt="test"
         />
       </Container>
