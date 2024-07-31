@@ -2,6 +2,20 @@ import { MailIcon, PhoneIcon } from "lucide-react";
 
 import { address } from "../data/data.json";
 import { Button } from "./ui/button";
+import { ResponsiveDialog } from "./ResponsiveDialog";
+
+const ContactButton = () => {
+  return (
+    <ResponsiveDialog type="contact">
+      <Button
+        variant="outline"
+        className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out "
+      >
+        Kontakt
+      </Button>
+    </ResponsiveDialog>
+  );
+};
 
 const Contact = () => {
   return (
@@ -34,4 +48,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export { Contact, ContactButton };

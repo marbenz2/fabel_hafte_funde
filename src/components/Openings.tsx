@@ -3,6 +3,7 @@ import { Card } from "./ui/card";
 import { Table, TableBody, TableCell, TableRow } from "./ui/table";
 import { Button } from "./ui/button";
 import React from "react";
+import { ResponsiveDialog } from "./ResponsiveDialog";
 
 const options: Intl.DateTimeFormatOptions = { weekday: "long" };
 const today = new Intl.DateTimeFormat("de-DE", options)
@@ -86,6 +87,19 @@ const StoreStatus = () => {
   );
 };
 
+const OpeningsButton = () => {
+  return (
+    <ResponsiveDialog type="openings">
+      <Button
+        variant="default"
+        className="w-full sm:w-fit px-16 py-6 transition-colors duration-300 ease-in-out"
+      >
+        Öffnungszeiten
+      </Button>
+    </ResponsiveDialog>
+  );
+};
+
 const Openings = () => {
   const days = Object.keys(openingHours);
 
@@ -134,4 +148,4 @@ const Openings = () => {
   );
 };
 
-export default Openings;
+export { Openings, OpeningsButton };
