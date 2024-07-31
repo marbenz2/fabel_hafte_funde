@@ -5,15 +5,16 @@ import { MenuIcon } from "lucide-react";
 const NavLinks = React.forwardRef<
   HTMLAnchorElement,
   React.AnchorHTMLAttributes<HTMLAnchorElement>
->(({ className, children, href, ...props }, ref) => (
+>(({ className, href, ...props }, ref) => (
   <a
     ref={ref}
     href={href}
-    className={cn("text-lg font-thin hover:text-orange-300", className)}
+    className={cn(
+      "text-lg font-thin hover:text-orange-300 transition-colors ease-in-out",
+      className
+    )}
     {...props}
-  >
-    {children}
-  </a>
+  />
 ));
 NavLinks.displayName = "NavLinks";
 
