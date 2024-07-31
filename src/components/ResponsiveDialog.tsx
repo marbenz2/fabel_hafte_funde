@@ -4,6 +4,7 @@ import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -20,8 +21,8 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import Openings from "./Openings";
-import Contact from "./Contact";
+import { Openings } from "./Openings";
+import { Contact } from "./Contact";
 import Imprint from "./Imprint";
 import Privacy from "./Privacy";
 
@@ -53,7 +54,7 @@ export function ResponsiveDialog({
         <DialogContent
           className={`max-w-6xl ${
             (type === "openings" || type === "contact") && "max-w-fit"
-          } p-8 w-full bg-background-muted`}
+          } p-8 w-full`}
         >
           <DialogHeader>
             <DialogTitle>{data ? data.itemName : config?.title}</DialogTitle>
@@ -74,6 +75,11 @@ export function ResponsiveDialog({
               <Privacy />
             ) : null}
           </div>
+          <DialogClose asChild>
+            <div className="flex w-full items-center justify-end">
+              <Button className="w-fit">Schließen</Button>
+            </div>
+          </DialogClose>
         </DialogContent>
       </Dialog>
     );
@@ -82,7 +88,7 @@ export function ResponsiveDialog({
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>{children}</DrawerTrigger>
-      <DrawerContent className=" bg-background-muted">
+      <DrawerContent>
         <DrawerHeader className="text-left">
           <DrawerTitle>{config?.title}</DrawerTitle>
           <DrawerDescription>{config?.description}</DrawerDescription>
@@ -102,7 +108,7 @@ export function ResponsiveDialog({
         </div>
         <DrawerFooter className="pt-2">
           <DrawerClose asChild>
-            <Button variant="outline">Schließen</Button>
+            <Button>Schließen</Button>
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
