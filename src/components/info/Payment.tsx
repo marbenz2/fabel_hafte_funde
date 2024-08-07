@@ -31,7 +31,7 @@ const Payment = () => {
         </div>
         <img
           className="order-1 col-span-full lg:col-span-2 max-h-[640px] h-full w-full object-cover"
-          src="/payment.webp"
+          src="/cash-register.webp"
           alt="test"
         />
       </Container>
