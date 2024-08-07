@@ -43,8 +43,8 @@ const Collection = () => {
       <div className="order-1 lg:order-2 col-span-full lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4 lg:px-8 xl:px-12 2xl:px-32">
         <Heading2>Kollektion</Heading2>
         <Paragraph>
-          Entdecken Sie stilvolle Second-Hand-Kleidung für die ganze Familie und
-          liebevoll gepflegte Kinderspielzeuge. Hochwertig, nachhaltig und
+          Entdecken Sie stilvolle Second-Hand-Kleidung für Damen und Kinder,
+          sowie liebevoll gepflegte Kinderspielzeuge. Hochwertig, nachhaltig und
           preiswert – besuchen Sie uns und finden Sie Ihre neuen
           Lieblingsstücke! Schauen Sie sich hier einige Highlights unserer
           Kollektion an.
