@@ -4,7 +4,7 @@ const Background = () => {
       <img
         src="/background.webp"
         alt="backgroundimage"
-        className="object-cover w-full h-full"
+        className="object-cover object-bottom w-full h-full"
       />
     </div>
   );
