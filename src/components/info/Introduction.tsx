@@ -17,12 +17,12 @@ const Introduction = () => {
             Herzlich Willkommen bei {company.title}, Ihrem charmanten
             Second-Hand-Shop für Kleidung und Kinderspielzeug in {address.city}!
             Bei uns finden Sie liebevoll ausgewählte, gut erhaltene Stücke für
-            Groß und Klein. Unser Sortiment umfasst modische Kleidung für
-            Erwachsene und Kinder sowie eine Vielzahl an Spielzeugen, die
-            kleinen Entdeckern große Freude bereiten. Kommen Sie vorbei und
-            entdecken Sie nachhaltige Schnäppchen, die nicht nur Ihren
-            Geldbeutel, sondern auch die Umwelt schonen. Wir freuen uns auf
-            Ihren Besuch!
+            Groß und Klein. Unser Sortiment umfasst modische Kleidung für Damen
+            und Kinder sowie eine Vielzahl an Spielzeugen, die kleinen
+            Entdeckern große Freude bereiten. Kommen Sie vorbei und entdecken
+            Sie nachhaltige Schnäppchen, die nicht nur Ihren Geldbeutel, sondern
+            auch die Umwelt schonen.{" "}
+            <span className="font-bold">Wir freuen uns auf Ihren Besuch!</span>
           </Paragraph>
           <div className="flex flex-col sm:flex-row w-full justify-center items-center gap-2 sm:gap-12">
             <OpeningsButton />
