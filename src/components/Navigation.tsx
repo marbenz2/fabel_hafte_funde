@@ -24,7 +24,7 @@ const NavigationContainer = ({
 }) => (
   <nav
     className={cn(
-      "sticky lg:fixed top-0 grid grid-cols-4 w-full gap-4 px-4 md:px-8 py-2 md:py-8 bg-primary-foreground/90 drop-shadow-md backdrop-blur-sm z-50",
+      "sticky lg:fixed top-0 grid grid-cols-4 w-full gap-4 px-4 md:px-8 py-4 md:py-8 bg-primary-foreground/90 drop-shadow-md backdrop-blur-sm z-50",
       className
     )}
   >
