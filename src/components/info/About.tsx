@@ -46,7 +46,7 @@ const About = () => {
             P.S. Kinder und Ehemänner sind herzlich eingeladen, mitzumachen –
             wer weiß, welche{" "}
             <span className="font-bold">fabelhaften Funde</span> wir noch
-            gemeinsam entdecken! 😉
+            gemeinsam entdecken!
           </Paragraph>
         </div>
         <img
