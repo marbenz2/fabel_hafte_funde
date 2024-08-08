@@ -14,7 +14,8 @@ const Introduction = () => {
             {company.title}
           </Heading2>
           <Paragraph className="text-center">
-            Herzlich Willkommen bei {company.title}, Ihrem charmanten
+            Herzlich Willkommen bei{" "}
+            <span className="font-bold">{company.title}</span>, Ihrem charmanten
             Second-Hand-Shop für Kleidung und Kinderspielzeug in {address.city}!
             Bei uns finden Sie liebevoll ausgewählte, gut erhaltene Stücke für
             Groß und Klein. Unser Sortiment umfasst modische Kleidung für Damen
