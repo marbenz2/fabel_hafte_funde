@@ -16,11 +16,14 @@ const Commission = () => {
             zum Verkauf. Ihre Artikel erreichen in den nächsten 3-4 Monaten
             viele potenzielle Käufer.
             <br />
+            <span className="font-bold">
+              Vertrauen Sie auf unsere Erfahrung und lassen Sie uns gemeinsam
+              einen fairen Verkaufspreis erzielen!
+            </span>
             <br />
-            Vertrauen Sie auf unsere Erfahrung und lassen Sie uns gemeinsam
-            einen fairen Verkaufspreis erzielen!
             <br />
-            Vereinbaren Sie jetzt einen Termin für die Anlieferung Ihrer Ware.
+            Vereinbaren Sie jetzt einen Termin für ein persönliches Gespräch und
+            die gemeinsame Durchsicht Ihrer Ware.
           </Paragraph>
           <ContactButton />
         </div>
