@@ -7,7 +7,10 @@ const Heading1 = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <h1
     ref={ref}
-    className={cn("font-serif font-thin uppercase text-sm sm:text-md md:text-lg", className)}
+    className={cn(
+      "font-serif uppercase text-sm sm:text-md md:text-lg",
+      className
+    )}
     {...props}
   />
 ));
