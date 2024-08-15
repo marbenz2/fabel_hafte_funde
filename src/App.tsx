@@ -13,19 +13,19 @@ function App() {
         <Container className="">
           <Introduction />
         </Container>
-        <Container className="bg-black/10">
+        <Container className="bg-black/5">
           <About />
         </Container>
         <Container className="">
           <Commission />
         </Container>
-        <Container className="bg-black/10">
+        <Container className="bg-black/5">
           <Collection />
         </Container>
         <Container className="py-24">
           <Instagram />
         </Container>
-        <Container className="bg-black/10 mb-32">
+        <Container className="bg-black/5 mb-32">
           <Payment />
         </Container>
         {/*         <Container className="items-center py-12 px-4 md:px-12 2xl:px-24">
