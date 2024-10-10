@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import { fetchInstagramFromApi } from "../lib/utils";
-import { InstagramApiResponse } from "../types";
-import { Card, CardContent } from "./ui/card";
+/* import { useEffect, useState } from "react"; */
+/* import { fetchInstagramFromApi } from "../lib/utils"; */
+/* import { InstagramApiResponse } from "../types"; */
+/* import { Card, CardContent } from "./ui/card"; */
 import { Container } from "./ui/container";
-import { Heading2, Paragraph } from "./ui/text-formatter";
-import { Skeleton } from "./ui/skeleton";
-import { InstagramIcon } from "lucide-react";
+import { Heading2 /* Paragraph */ } from "./ui/text-formatter";
+/* import { Skeleton } from "./ui/skeleton"; */
+/* import { InstagramIcon } from "lucide-react"; */
 
 const Instagram = () => {
-  const [isLoading, setIsLoading] = useState(false);
+  /*   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [feeds, setFeeds] = useState<InstagramApiResponse>();
+  const [feeds, setFeeds] = useState<InstagramApiResponse>(); */
 
-  useEffect(() => {
+  /*   useEffect(() => {
     (async () => {
       setIsLoading(true);
       setErrorMessage("");
@@ -29,13 +29,13 @@ const Instagram = () => {
         setIsLoading(false);
       }
     })();
-  }, []);
+  }, []); */
 
   return (
     <Container id="instagram" className="text-primary/60 grid-cols-5">
       <div className="order-1 lg:order-1 col-span-5 lg:col-span-3 flex flex-col w-full h-full justify-center gap-8 py-32 px-4 lg:px-8 xl:px-12 2xl:px-32">
         <Heading2>Instagram</Heading2>
-        {isLoading && <Skeleton className="h-4 w-[150px] self-center" />}
+        {/*         {isLoading && <Skeleton className="h-4 w-[150px] self-center" />}
         {errorMessage && <p>Error: {errorMessage}</p>}
         {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
           <Paragraph className="self-center lg:self-start">
@@ -49,10 +49,10 @@ const Instagram = () => {
               {feeds.data[0].username}
             </a>
           </Paragraph>
-        )}
+        )} */}
       </div>
       <div className="order-2 lg:order-2 col-span-5 lg:col-span-2">
-        {isLoading && <Skeleton className="h-[640px] w-full rounded-none" />}
+        {/* {isLoading && <Skeleton className="h-[640px] w-full rounded-none" />}
         {errorMessage && <p>Error: {errorMessage}</p>}
         {!isLoading && !errorMessage && feeds && feeds.data.length > 0 && (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
@@ -81,7 +81,7 @@ const Instagram = () => {
               </a>
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </Container>
   );
